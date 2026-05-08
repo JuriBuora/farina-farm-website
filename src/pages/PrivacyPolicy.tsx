@@ -4,7 +4,7 @@ import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageSEO from "@/components/PageSEO";
 
-const LAST_UPDATED = "7 maggio 2026";
+const LAST_UPDATED = "8 maggio 2026";
 
 const PrivacyPolicy = () => {
   React.useEffect(() => {
@@ -52,7 +52,13 @@ const PrivacyPolicy = () => {
               nome e cognome, indirizzo email, numero di telefono (facoltativo) e contenuto del messaggio.
               Il modulo di richiesta consegna legna può raccogliere nome e cognome, telefono, email, indirizzo
               di consegna, comune, CAP, provincia, quantità richiesta, data preferita di consegna e note inserite
-              liberamente dall'utente. Il sito non utilizza strumenti di analytics, profilazione o tracciamento pubblicitario.
+              liberamente dall'utente.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Se l'utente presta il consenso ai cookie analitici, il sito può utilizzare Google Analytics per raccogliere
+              dati statistici aggregati sull'uso del sito, come pagine visitate, provenienza approssimativa, dispositivo,
+              browser, data e ora della visita. Google Analytics viene caricato solo dopo il consenso dell'utente e non
+              viene utilizzato per raccogliere dati di pagamento o per inviare pubblicità personalizzata da questo sito.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Alcune pagine possono incorporare contenuti di terze parti (ad es. <strong className="text-foreground">Google Maps</strong>
@@ -104,6 +110,12 @@ const PrivacyPolicy = () => {
               Quando l'utente invia un modulo, i dati inseriti transitano tramite il servizio
               <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> FormSubmit</a>,
               utilizzato come recapito tecnico delle richieste email. Il servizio opera secondo le proprie condizioni e informative.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Previo consenso dell'utente, il sito può utilizzare
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> Google Analytics</a>
+              {" "}per statistiche aggregate di navigazione. Il trattamento dei dati da parte di Google avviene secondo
+              le informative e impostazioni messe a disposizione da Google.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Il sito incorpora una mappa di Google Maps nella pagina Contatti. La consultazione della mappa

@@ -1,10 +1,65 @@
 import React from "react";
+import { CheckCircle2, X } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageSEO from "@/components/PageSEO";
+import { Button } from "@/components/ui/button";
+import {
+  getStoredAnalyticsConsent,
+  hasAnalyticsMeasurementId,
+  loadGoogleAnalytics,
+  storeAnalyticsConsent,
+  trackPageView,
+} from "@/lib/analytics";
 
-const LAST_UPDATED = "7 maggio 2026";
+const LAST_UPDATED = "8 maggio 2026";
+
+const AnalyticsConsentControls = () => {
+  const [consent, setConsent] = React.useState<"accepted" | "declined" | null>(() => {
+    if (typeof window === "undefined") return null;
+    return getStoredAnalyticsConsent();
+  });
+
+  if (!hasAnalyticsMeasurementId()) {
+    return null;
+  }
+
+  const acceptAnalytics = () => {
+    storeAnalyticsConsent("accepted");
+    setConsent("accepted");
+    loadGoogleAnalytics();
+    trackPageView(window.location.pathname, document.title);
+  };
+
+  const declineAnalytics = () => {
+    storeAnalyticsConsent("declined");
+    setConsent("declined");
+  };
+
+  return (
+    <div className="rounded-xl border border-border bg-card p-5">
+      <h2 className="font-serif text-2xl font-semibold">Gestisci consenso analytics</h2>
+      <p className="mt-2 text-muted-foreground leading-relaxed">
+        Stato attuale:{" "}
+        <strong className="text-foreground">
+          {consent === "accepted" ? "accettato" : consent === "declined" ? "rifiutato" : "non ancora scelto"}
+        </strong>
+        .
+      </p>
+      <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+        <Button type="button" onClick={acceptAnalytics} className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <CheckCircle2 className="mr-2 h-4 w-4" />
+          Accetta analytics
+        </Button>
+        <Button type="button" variant="outline" onClick={declineAnalytics}>
+          <X className="mr-2 h-4 w-4" />
+          Rifiuta analytics
+        </Button>
+      </div>
+    </div>
+  );
+};
 
 const CookiePolicy = () => {
   React.useEffect(() => {
@@ -44,17 +99,35 @@ const CookiePolicy = () => {
 
             <h2 className="font-serif text-2xl font-semibold">Cookie utilizzati su questo sito</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Il sito <strong className="text-foreground">cucurbitacee.com</strong> non utilizza cookie di
-              profilazione, cookie pubblicitari o strumenti di analytics (es. Google Analytics, Meta Pixel).
-              Per questo motivo non viene mostrato alcun banner di consenso ai cookie.
+              Il sito <strong className="text-foreground">cucurbitacee.com</strong> utilizza cookie tecnici necessari
+              al funzionamento delle pagine e, solo con il consenso dell'utente, cookie o tecnologie analoghe per
+              statistiche aggregate tramite Google Analytics. Il sito non utilizza cookie pubblicitari o strumenti
+              di profilazione commerciale.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Possono essere presenti esclusivamente <strong className="text-foreground">cookie tecnici</strong> strettamente
+              I <strong className="text-foreground">cookie tecnici</strong> strettamente
               necessari al funzionamento del sito, per i quali, ai sensi della normativa vigente
               (Provvedimento del Garante Privacy del 10 giugno 2021), non è richiesto il consenso preventivo.
             </p>
+            <p className="text-muted-foreground leading-relaxed">
+              I cookie analitici vengono caricati solo dopo aver premuto “Accetta” nel banner. Se l'utente sceglie
+              “Rifiuta”, Google Analytics non viene caricato e la navigazione continua normalmente.
+            </p>
+
+            <AnalyticsConsentControls />
 
             <h2 className="font-serif text-2xl font-semibold">Cookie di terze parti</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Previo consenso dell'utente, il sito può usare <strong className="text-foreground">Google Analytics</strong>
+              per misurare visite, pagine viste, provenienza approssimativa, dispositivo e browser. Per maggiori
+              informazioni si rimanda alla
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              > {" "}privacy policy di Google</a>.
+            </p>
             <p className="text-muted-foreground leading-relaxed">
               Quando l'utente invia un modulo, i dati transitano tramite <strong className="text-foreground">FormSubmit</strong>,
               servizio esterno usato per il recapito tecnico delle richieste email. Il servizio può utilizzare cookie

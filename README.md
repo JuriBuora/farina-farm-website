@@ -10,6 +10,7 @@ Production marketing website for [www.cucurbitacee.com](https://www.cucurbitacee
 - Image optimization pipeline that generates WebP and AVIF variants
 - Keyless Google Maps embed
 - Contact form validation, anti-spam timing checks, honeypot field, and cooldown
+- Consent-gated Google Analytics support through `VITE_GA_MEASUREMENT_ID`
 - GitHub Actions deployment to GitHub Pages
 - Unit tests around contact validation and image metadata
 
@@ -32,6 +33,10 @@ npm audit
 ## Deployment
 
 Deploys run through `.github/workflows/deploy.yml` on pushes to `main`. GitHub Pages publishes the `dist/` artifact produced by the workflow.
+
+To enable Google Analytics in production, create a GitHub Actions repository variable named
+`VITE_GA_MEASUREMENT_ID` with the GA4 web stream measurement ID, for example `G-XXXXXXXXXX`.
+Analytics is loaded only after the visitor accepts analytics cookies.
 
 ## Domain and SEO notes
 

@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookieConsentBanner />
       </Suspense>
     </BrowserRouter>
   </TooltipProvider>
