@@ -74,8 +74,9 @@ export function trackPageView(path: string, title: string) {
   }
 
   loadGoogleAnalytics();
-  window.gtag?.("event", "page_view", {
+  window.gtag?.("config", GA_MEASUREMENT_ID, {
     page_path: path,
     page_title: title,
+    page_location: `${window.location.origin}${path}`,
   });
 }
