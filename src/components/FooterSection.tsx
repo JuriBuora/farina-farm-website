@@ -26,6 +26,7 @@ const FooterSection = () => (
             <SiteImage
               imageName="logo-farina.png"
               alt="Logo Azienda Agricola Farina"
+              preferOriginal
               width={256}
               height={185}
               decoding="async"
