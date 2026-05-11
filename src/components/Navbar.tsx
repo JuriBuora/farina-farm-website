@@ -42,12 +42,12 @@ const Navbar = () => {
           <SiteImage
             imageName="logo-farina.png"
             alt="Logo Azienda Agricola Farina"
-            width={256}
-            height={185}
+            width={64}
+            height={48}
             sizes="64px"
             decoding="async"
             fetchPriority="high"
-            className="h-12 w-auto"
+            className="h-12 w-16 rounded-full object-cover"
           />
         </Link>
 

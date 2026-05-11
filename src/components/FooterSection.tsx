@@ -22,15 +22,15 @@ const FooterSection = () => (
       <div className="grid md:grid-cols-3 gap-12 mb-12">
         {/* Brand */}
         <div>
-          <div className="bg-white rounded-lg p-2 w-fit mb-4">
+          <div className="bg-white rounded-full p-2 w-fit mb-4">
             <SiteImage
               imageName="logo-farina.png"
               alt="Logo Azienda Agricola Farina"
-              width={256}
-              height={185}
+              width={80}
+              height={60}
               sizes="80px"
               decoding="async"
-              className="h-14 w-auto"
+              className="h-14 w-20 rounded-full object-cover"
             />
           </div>
           <p className="text-primary-foreground text-sm leading-relaxed mb-6">
