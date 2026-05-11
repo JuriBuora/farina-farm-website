@@ -1,6 +1,8 @@
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import SiteImage from "@/components/SiteImage";
+import logoAvif128 from "@/assets/generated/logo-farina-128.avif";
+import logoWebp128 from "@/assets/generated/logo-farina-128.webp";
+import logoFallback from "@/assets/logo-farina.png";
 
 const FacebookIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
@@ -23,15 +25,20 @@ const FooterSection = () => (
         {/* Brand */}
         <div>
           <div className="bg-white rounded-full p-2 w-fit mb-4">
-            <SiteImage
-              imageName="logo-farina.png"
-              alt="Logo Azienda Agricola Farina"
-              width={80}
-              height={60}
-              sizes="80px"
-              decoding="async"
-              className="h-14 w-20 rounded-full object-cover"
-            />
+            <picture>
+              <source srcSet={logoAvif128} type="image/avif" />
+              <source srcSet={logoWebp128} type="image/webp" />
+              <img
+                src={logoFallback}
+                alt="Logo Azienda Agricola Farina"
+                width={80}
+                height={60}
+                sizes="80px"
+                decoding="async"
+                loading="lazy"
+                className="h-14 w-20 rounded-full object-cover"
+              />
+            </picture>
           </div>
           <p className="text-primary-foreground text-sm leading-relaxed mb-6">
             Coltiviamo angurie, meloni e zucche per vendita all’ingrosso e al dettaglio

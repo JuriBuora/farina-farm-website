@@ -36,7 +36,7 @@ const homeFaq: FAQItem[] = [
 ];
 
 const interactionEvents = ["scroll", "pointerdown", "keydown", "touchstart"] as const;
-const BELOW_FOLD_DELAY_MS = 1200;
+const BELOW_FOLD_DELAY_MS = 3600;
 
 const scheduleBelowFold = (callback: () => void) => {
   let done = false;

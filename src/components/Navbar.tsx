@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import SiteImage from "@/components/SiteImage";
+import logoAvif128 from "@/assets/generated/logo-farina-128.avif";
+import logoWebp128 from "@/assets/generated/logo-farina-128.webp";
+import logoFallback from "@/assets/logo-farina.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -39,16 +41,20 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-2" aria-label="Vai alla home">
-          <SiteImage
-            imageName="logo-farina.png"
-            alt="Logo Azienda Agricola Farina"
-            width={64}
-            height={48}
-            sizes="64px"
-            decoding="async"
-            fetchPriority="high"
-            className="h-12 w-16 rounded-full object-cover"
-          />
+          <picture>
+            <source srcSet={logoAvif128} type="image/avif" />
+            <source srcSet={logoWebp128} type="image/webp" />
+            <img
+              src={logoFallback}
+              alt="Logo Azienda Agricola Farina"
+              width={64}
+              height={48}
+              sizes="64px"
+              decoding="async"
+              fetchPriority="high"
+              className="h-12 w-16 rounded-full object-cover"
+            />
+          </picture>
         </Link>
 
         {/* Desktop */}
