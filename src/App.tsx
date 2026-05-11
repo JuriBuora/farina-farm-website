@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DeferredClientChrome from "@/components/DeferredClientChrome";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import MobileCTABar from "@/components/MobileCTABar";
 import Index from "./pages/Index.tsx";
 
 // Route-level code splitting keeps the initial JS bundle smaller and speeds up first load.
@@ -38,6 +39,7 @@ const App = () => (
       </Routes>
     </Suspense>
     <WhatsAppButton />
+    <MobileCTABar />
     <DeferredClientChrome />
   </BrowserRouter>
 );
