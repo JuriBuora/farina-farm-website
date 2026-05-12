@@ -35,8 +35,7 @@ const homeFaq: FAQItem[] = [
   },
 ];
 
-const interactionEvents = ["scroll", "pointerdown", "keydown", "touchstart"] as const;
-const BELOW_FOLD_DELAY_MS = 3600;
+const BELOW_FOLD_DELAY_MS = 900;
 
 const scheduleBelowFold = (callback: () => void) => {
   let done = false;
@@ -51,10 +50,6 @@ const scheduleBelowFold = (callback: () => void) => {
     callback();
   };
 
-  interactionEvents.forEach((eventName) => {
-    window.addEventListener(eventName, reveal, { once: true, passive: true });
-  });
-
   firstFrame = window.requestAnimationFrame(() => {
     secondFrame = window.requestAnimationFrame(() => {
       if (typeof window.requestIdleCallback === "function") {
@@ -67,9 +62,6 @@ const scheduleBelowFold = (callback: () => void) => {
 
   return () => {
     done = true;
-    interactionEvents.forEach((eventName) => {
-      window.removeEventListener(eventName, reveal);
-    });
     window.cancelAnimationFrame(firstFrame);
     window.cancelAnimationFrame(secondFrame);
     if (idleHandle !== null && typeof window.cancelIdleCallback === "function") {
@@ -89,7 +81,12 @@ const HomeBelowFold = () => {
   }, []);
 
   if (!ready) {
-    return null;
+    return (
+      <div
+        aria-hidden="true"
+        className="min-h-[120vh] bg-background"
+      />
+    );
   }
 
   return (
