@@ -6,8 +6,8 @@ import HomeBelowFold from "@/components/HomeBelowFold";
 const Index = () => (
   <>
     <PageSEO
-      title="Azienda Agricola a Bando di Argenta (FE) — Farina 2.0"
-      description="Angurie, meloni e zucche all’ingrosso e al dettaglio direttamente in azienda, con legna da ardere e consegna nel ferrarese. Dal 1975 a Bando di Argenta, vicino Portomaggiore."
+      title="Azienda Agricola a Bando di Argenta (FE)"
+      description="Società Agricola Farina 2.0 a Bando di Argenta (FE): angurie, meloni e zucche all’ingrosso e al dettaglio, e legna da ardere nel ferrarese."
       path="/"
     />
     <Navbar />

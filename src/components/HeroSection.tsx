@@ -32,7 +32,7 @@ const HeroSection = () => (
         width={1920}
         height={1080}
         loading="eager"
-        fetchPriority="high"
+        {...{ fetchpriority: "high" }}
         decoding="async"
         sizes="100vw"
       />

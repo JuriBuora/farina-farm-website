@@ -151,7 +151,7 @@ const Contatti = () => {
     <div className="min-h-screen bg-background">
       <PageSEO
         title="Contatti — Azienda Agricola Farina (Ferrara)"
-        description="Telefono, WhatsApp, email e indirizzo della Società Agricola Farina 2.0 a Bando di Argenta (FE). Aperti dal lunedì al sabato. Area servita: Argenta, Portomaggiore, Ferrara."
+        description="Telefono, WhatsApp, email e indirizzo della Società Agricola Farina 2.0 a Bando di Argenta (FE). Contatti per prodotti, forniture e legna."
         path="/contatti"
       />
       <Navbar />

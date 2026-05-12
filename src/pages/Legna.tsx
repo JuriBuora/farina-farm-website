@@ -62,7 +62,7 @@ const Legna = () => {
     <div className="min-h-screen bg-background">
       <PageSEO
         title="Legna da Ardere a Ferrara — Consegna a Domicilio"
-        description="Legna da ardere stagionata di faggio, cerro e carpino, disponibile nei tagli stufa, stufone, camino, pizza corta e pizza lunga. Consegna entro 50 km da Bando di Argenta."
+        description="Legna da ardere stagionata di faggio, cerro e carpino nei tagli stufa, stufone, camino, pizza corta e pizza lunga. Consegna entro 50 km da Bando."
         path="/legna"
       />
       <Navbar />
