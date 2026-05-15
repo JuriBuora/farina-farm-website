@@ -6,6 +6,8 @@ on:
       - main
       - master
       - work
+  schedule:
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -35,6 +37,9 @@ jobs:
         run: npm ci
 
       - name: Build website
+        env:
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
         run: npm run build
 
       - name: Ensure CNAME exists in build output

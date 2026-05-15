@@ -145,9 +145,11 @@ const CookiePolicy = () => {
               > {" "}cookie policy di Google</a>.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              La pagina <strong className="text-foreground">Galleria</strong> include un link al profilo Instagram
-              aziendale. Il sito non carica automaticamente contenuti o cookie di Instagram: eventuali cookie di Meta
-              possono essere impostati solo dopo l'apertura del link esterno. Per maggiori informazioni si rimanda alla
+              La pagina <strong className="text-foreground">Galleria</strong> può mostrare una selezione degli ultimi
+              post pubblici del profilo Instagram aziendale. Le immagini vengono copiate sul sito durante la pubblicazione
+              e servite da cucurbitacee.com, senza caricare automaticamente cookie di Instagram nel browser dell'utente.
+              Eventuali cookie di Meta possono essere impostati solo dopo l'apertura dei link esterni verso Instagram.
+              Per maggiori informazioni si rimanda alla
               <a
                 href="https://privacycenter.instagram.com/policies/cookies/"
                 target="_blank"

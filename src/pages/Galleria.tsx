@@ -5,7 +5,7 @@ import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageSEO from "@/components/PageSEO";
-import InstagramProfileCard from "@/components/InstagramProfileCard";
+import InstagramFeedPanel from "@/components/InstagramFeedPanel";
 import SiteImage from "@/components/SiteImage";
 
 const categories = ["Tutte", "Angurie", "Meloni", "Zucche", "Legna", "Azienda"] as const;
@@ -185,10 +185,7 @@ const Galleria = () => {
 
             <aside className="mt-10 lg:mt-0">
               <div className="lg:sticky lg:top-24">
-                <InstagramProfileCard
-                  profileUrl="https://instagram.com/soc.agr.farina_2.0"
-                  profileName="Società Agricola Farina 2.0"
-                />
+                <InstagramFeedPanel />
               </div>
             </aside>
           </div>

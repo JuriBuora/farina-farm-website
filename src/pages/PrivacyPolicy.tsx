@@ -62,7 +62,8 @@ const PrivacyPolicy = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Alcune pagine possono incorporare contenuti di terze parti (ad es. <strong className="text-foreground">Google Maps</strong>{" "}
-              nella pagina Contatti). La pagina Galleria include inoltre un link esterno al profilo Instagram aziendale.
+              nella pagina Contatti). La pagina Galleria può inoltre mostrare copie locali degli ultimi post pubblici
+              del profilo Instagram aziendale e link esterni verso Instagram.
               In questi casi, i fornitori terzi possono ricevere dati tecnici di navigazione (es. indirizzo IP, user agent)
               quando l'utente apre il servizio esterno o visualizza il contenuto incorporato.
             </p>
@@ -121,8 +122,10 @@ const PrivacyPolicy = () => {
               Il sito incorpora una mappa di Google Maps nella pagina Contatti. La consultazione della mappa
               comporta l'invio dell'indirizzo IP dell'utente ai server di Google secondo la
               <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> privacy policy di Google</a>.
-              La pagina Galleria contiene un link al profilo Instagram aziendale: aprendo il link, l'utente lascia il sito
-              e naviga su una piattaforma gestita da Meta, secondo la
+              La pagina Galleria può mostrare una selezione degli ultimi post pubblici del profilo Instagram aziendale.
+              Le immagini vengono recuperate in fase di pubblicazione del sito e servite localmente da cucurbitacee.com.
+              Aprendo un post o il profilo Instagram, l'utente lascia il sito e naviga su una piattaforma gestita da Meta,
+              secondo la
               <a href="https://privacycenter.instagram.com/policy/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> privacy policy di Instagram</a>.
               Il sito non utilizza pixel di Meta né altri strumenti di tracciamento pubblicitario.
             </p>
