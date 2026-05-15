@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DeferredClientChrome from "@/components/DeferredClientChrome";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import MobileCTABar from "@/components/MobileCTABar";
+import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index.tsx";
 
 // Route-level code splitting keeps the initial JS bundle smaller and speeds up first load.
@@ -18,6 +19,7 @@ const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const App = () => (
   <BrowserRouter>
+    <ScrollToTop />
     <Suspense
       fallback={
         <div className="min-h-screen bg-background flex items-center justify-center text-muted-foreground">
