@@ -127,6 +127,9 @@ const PrivacyPolicy = () => {
               Aprendo un post o il profilo Instagram, l'utente lascia il sito e naviga su una piattaforma gestita da Meta,
               secondo la
               <a href="https://privacycenter.instagram.com/policy/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> privacy policy di Instagram</a>.
+              La pagina Galleria può inoltre incorporare il riquadro ufficiale della pagina Facebook aziendale; in questo
+              caso la visualizzazione del riquadro comporta il collegamento ai servizi di Meta/Facebook secondo la
+              <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> privacy policy di Facebook</a>.
               Il sito non utilizza pixel di Meta né altri strumenti di tracciamento pubblicitario.
             </p>
 

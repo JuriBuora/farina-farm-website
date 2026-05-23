@@ -6,6 +6,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageSEO from "@/components/PageSEO";
 import InstagramFeedPanel from "@/components/InstagramFeedPanel";
+import FacebookPagePanel from "@/components/FacebookPagePanel";
 import SiteImage from "@/components/SiteImage";
 
 const categories = ["Tutte", "Angurie", "Meloni", "Zucche", "Legna", "Azienda"] as const;
@@ -184,7 +185,8 @@ const Galleria = () => {
             </div>
 
             <aside className="mt-10 lg:mt-0">
-              <div className="lg:sticky lg:top-24">
+              <div className="space-y-6 lg:sticky lg:top-24">
+                <FacebookPagePanel />
                 <InstagramFeedPanel />
               </div>
             </aside>

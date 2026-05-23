@@ -36,7 +36,7 @@ const FooterSection = () => (
             e forniamo legna da ardere con consegna nel ferrarese e nel basso ravennate. Dal 1975.
           </p>
           <div className="flex gap-3">
-            <a href="https://facebook.com/Azienda-Agricola-Farina-Roberto-100057542707078" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors" aria-label="Facebook">
+            <a href="https://www.facebook.com/Azienda-Agricola-Farina-Roberto-1437905316493921/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors" aria-label="Facebook">
               <FacebookIcon className="w-4 h-4" />
             </a>
             <a href="https://instagram.com/soc.agr.farina_2.0" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors" aria-label="Instagram">

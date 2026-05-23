@@ -157,6 +157,18 @@ const CookiePolicy = () => {
                 className="text-primary hover:underline"
               > {" "}cookie policy di Instagram</a>.
             </p>
+            <p className="text-muted-foreground leading-relaxed">
+              La stessa pagina può incorporare il riquadro ufficiale della pagina Facebook aziendale. Il contenuto è
+              fornito da <strong className="text-foreground">Meta Platforms Ireland</strong> e la sua visualizzazione
+              può comportare l'uso di cookie o tecnologie simili da parte di Facebook secondo le proprie condizioni.
+              Per maggiori informazioni si rimanda alla
+              <a
+                href="https://www.facebook.com/privacy/policies/cookies/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              > {" "}cookie policy di Facebook</a>.
+            </p>
 
             <h2 className="font-serif text-2xl font-semibold">Come gestire i cookie</h2>
             <p className="text-muted-foreground leading-relaxed">
