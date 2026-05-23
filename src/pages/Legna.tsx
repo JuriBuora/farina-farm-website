@@ -1,5 +1,5 @@
 import React from "react";
-import { Flame, Truck, Package, Phone, TreeDeciduous, Ruler, ThermometerSun } from "lucide-react";
+import { Flame, Truck, Package, Phone, Send, TreeDeciduous, Ruler, ThermometerSun } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
@@ -88,12 +88,13 @@ const Legna = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" variant="secondary" className="font-sans" asChild>
                 <Link to="/ordina-legna-da-ardere">
-                  <Phone className="w-4 h-4 mr-2" />
+                  <Send className="w-4 h-4 mr-2" />
                   Richiedi Consegna
                 </Link>
               </Button>
               <Button size="lg" variant="secondary" className="font-sans" asChild>
                 <a href="https://wa.me/+393667701214" target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-4 h-4 mr-2" />
                   WhatsApp
                 </a>
               </Button>
@@ -190,7 +191,7 @@ const Legna = () => {
                 <div className="flex flex-wrap gap-3 mt-6">
                   <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans" asChild>
                     <Link to="/ordina-legna-da-ardere">
-                      <Phone className="w-4 h-4 mr-2" />
+                      <Send className="w-4 h-4 mr-2" />
                       Richiedi consegna
                     </Link>
                   </Button>

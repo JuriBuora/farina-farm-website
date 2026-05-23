@@ -4,6 +4,7 @@ import DeferredClientChrome from "@/components/DeferredClientChrome";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import MobileCTABar from "@/components/MobileCTABar";
 import ScrollToTop from "@/components/ScrollToTop";
+import BackToTopButton from "@/components/BackToTopButton";
 import Index from "./pages/Index.tsx";
 
 // Route-level code splitting keeps the initial JS bundle smaller and speeds up first load.
@@ -40,6 +41,7 @@ const App = () => (
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
+    <BackToTopButton />
     <WhatsAppButton />
     <MobileCTABar />
     <DeferredClientChrome />
