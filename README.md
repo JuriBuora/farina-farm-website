@@ -1,6 +1,6 @@
 # Farina Farm Website
 
-Production marketing website for **Farina Farm** at [www.cucurbitacee.com](https://www.cucurbitacee.com).
+Production marketing website for **Farina Farm** at [www.aziendaagricolafarina.com](https://www.aziendaagricolafarina.com).
 
 This repository contains a fast, static, mobile-friendly website built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**. It is designed for a real agricultural business that wants to present seasonal produce, pumpkins and cucurbits, firewood services, image galleries, contact information, and privacy-compliant analytics.
 
@@ -16,7 +16,7 @@ The site includes dedicated pages for products, firewood, contact information, b
 
 ## Live Website
 
-**Production:** [https://www.cucurbitacee.com](https://www.cucurbitacee.com)
+**Production:** [https://www.aziendaagricolafarina.com](https://www.aziendaagricolafarina.com)
 
 ---
 
@@ -361,7 +361,7 @@ The project includes a `CNAME` file for the custom domain.
 Expected production domain:
 
 ```txt
-www.cucurbitacee.com
+www.aziendaagricolafarina.com
 ```
 
 The deployment workflow verifies that the `CNAME` file is present in the final `dist` output.
@@ -477,4 +477,4 @@ This repository is intended for Farina Farm business operations unless another l
 
 ## Maintainers
 
-Maintained for Farina Farm / Cucurbitacee.com.
+Maintained for Farina Farm / aziendaagricolafarina.com.

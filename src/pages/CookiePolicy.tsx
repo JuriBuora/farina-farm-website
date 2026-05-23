@@ -70,7 +70,7 @@ const CookiePolicy = () => {
     <div className="min-h-screen bg-background">
       <PageSEO
         title="Cookie Policy"
-        description="Informativa sull'uso dei cookie sul sito cucurbitacee.com della Società Agricola Farina 2.0."
+        description="Informativa sull'uso dei cookie sul sito aziendaagricolafarina.com della Società Agricola Farina 2.0."
         path="/cookie-policy"
       />
       <Navbar />
@@ -79,7 +79,7 @@ const CookiePolicy = () => {
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4">Cookie Policy</h1>
           <p className="text-primary-foreground/80 max-w-2xl mx-auto">
-            Informativa sull'uso dei cookie sul sito cucurbitacee.com.
+            Informativa sull'uso dei cookie sul sito aziendaagricolafarina.com.
           </p>
         </div>
       </section>
@@ -99,7 +99,7 @@ const CookiePolicy = () => {
 
             <h2 className="font-serif text-2xl font-semibold">Cookie utilizzati su questo sito</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Il sito <strong className="text-foreground">cucurbitacee.com</strong> utilizza cookie tecnici necessari
+              Il sito <strong className="text-foreground">aziendaagricolafarina.com</strong> utilizza cookie tecnici necessari
               al funzionamento delle pagine e, solo con il consenso dell'utente, cookie o tecnologie analoghe per
               statistiche aggregate tramite Google Analytics. Il sito non utilizza cookie pubblicitari o strumenti
               di profilazione commerciale.
@@ -147,7 +147,7 @@ const CookiePolicy = () => {
             <p className="text-muted-foreground leading-relaxed">
               La pagina <strong className="text-foreground">Galleria</strong> può mostrare una selezione degli ultimi
               post pubblici del profilo Instagram aziendale. Le immagini vengono copiate sul sito durante la pubblicazione
-              e servite da cucurbitacee.com, senza caricare automaticamente cookie di Instagram nel browser dell'utente.
+              e servite da aziendaagricolafarina.com, senza caricare automaticamente cookie di Instagram nel browser dell'utente.
               Eventuali cookie di Meta possono essere impostati solo dopo l'apertura dei link esterni verso Instagram.
               Per maggiori informazioni si rimanda alla
               <a

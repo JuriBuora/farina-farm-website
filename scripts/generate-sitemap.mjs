@@ -2,7 +2,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { sitePages } from "./site-pages.mjs";
 
-const DEFAULT_SITE_URL = "https://www.cucurbitacee.com";
+const DEFAULT_SITE_URL = "https://www.aziendaagricolafarina.com";
 const OUTPUT_PATH = path.resolve("public/sitemap.xml");
 
 function stripTrailingSlashes(url) {

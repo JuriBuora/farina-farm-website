@@ -47,7 +47,7 @@ const PrivacyPolicy = () => {
 
             <h2 className="font-serif text-2xl font-semibold">Tipologie di Dati Raccolti</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Il sito <strong className="text-foreground">cucurbitacee.com</strong> raccoglie esclusivamente i dati che l'utente
+              Il sito <strong className="text-foreground">aziendaagricolafarina.com</strong> raccoglie esclusivamente i dati che l'utente
               fornisce volontariamente compilando i moduli presenti sul sito. Il modulo di contatto può raccogliere
               nome e cognome, indirizzo email, numero di telefono (facoltativo) e contenuto del messaggio.
               Il modulo di richiesta consegna legna può raccogliere nome e cognome, telefono, email, indirizzo
@@ -123,7 +123,7 @@ const PrivacyPolicy = () => {
               comporta l'invio dell'indirizzo IP dell'utente ai server di Google secondo la
               <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> privacy policy di Google</a>.
               La pagina Galleria può mostrare una selezione degli ultimi post pubblici del profilo Instagram aziendale.
-              Le immagini vengono recuperate in fase di pubblicazione del sito e servite localmente da cucurbitacee.com.
+              Le immagini vengono recuperate in fase di pubblicazione del sito e servite localmente da aziendaagricolafarina.com.
               Aprendo un post o il profilo Instagram, l'utente lascia il sito e naviga su una piattaforma gestita da Meta,
               secondo la
               <a href="https://privacycenter.instagram.com/policy/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> privacy policy di Instagram</a>.

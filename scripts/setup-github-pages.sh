@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DOMAIN="${DOMAIN:-www.cucurbitacee.com}"
+DOMAIN="${DOMAIN:-www.aziendaagricolafarina.com}"
 WORKFLOW_FILE="${WORKFLOW_FILE:-deploy.yml}"
 
 require_command() {

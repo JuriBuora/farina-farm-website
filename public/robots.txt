@@ -4,4 +4,4 @@ Allow: /
 # Block common non-indexable paths
 Disallow: /404.html
 
-Sitemap: https://www.cucurbitacee.com/sitemap.xml
+Sitemap: https://www.aziendaagricolafarina.com/sitemap.xml

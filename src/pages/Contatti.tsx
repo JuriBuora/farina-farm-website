@@ -17,7 +17,7 @@ import {
 } from "@/lib/contactValidation";
 
 const formSubmitEndpoint = "https://formsubmit.co/ajax/soc.agr.farina@gmail.com";
-const formSourceUrl = "https://www.cucurbitacee.com/contatti";
+const formSourceUrl = "https://www.aziendaagricolafarina.com/contatti";
 const minSubmitDelayMs = 3000;
 const submitCooldownMs = 15000;
 const formSubmitBlacklist = [
@@ -102,7 +102,7 @@ const Contatti = () => {
       formData.set("email", normalizedForm.email);
       formData.set("telefono", normalizedForm.telefono);
       formData.set("messaggio", normalizedForm.messaggio);
-      formData.set("_subject", `Nuovo messaggio da cucurbitacee.com - ${normalizedForm.nome}`);
+      formData.set("_subject", `Nuovo messaggio da aziendaagricolafarina.com - ${normalizedForm.nome}`);
       formData.set("_template", "table");
       formData.set("_url", formSourceUrl);
       formData.set("tempo_compilazione_secondi", String(Math.max(1, Math.round(fillDurationMs / 1000))));
@@ -237,7 +237,7 @@ const Contatti = () => {
                   <input type="hidden" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
                   <input type="hidden" name="_template" value="table" />
                   <input type="hidden" name="_url" value={formSourceUrl} />
-                  <input type="hidden" name="_subject" value="Nuovo messaggio da cucurbitacee.com" />
+                  <input type="hidden" name="_subject" value="Nuovo messaggio da aziendaagricolafarina.com" />
                   <input type="hidden" name="_blacklist" value={formSubmitBlacklist} />
                   <div>
                     <label htmlFor="nome" className="block text-sm font-medium text-foreground mb-1.5">Nome e Cognome *</label>

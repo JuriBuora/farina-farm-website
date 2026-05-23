@@ -17,7 +17,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const formSubmitEndpoint = "https://formsubmit.co/ajax/soc.agr.farina@gmail.com";
 const pagePath = "/ordina-legna-da-ardere";
-const pageUrl = "https://www.cucurbitacee.com/ordina-legna-da-ardere";
+const pageUrl = "https://www.aziendaagricolafarina.com/ordina-legna-da-ardere";
 
 const quantityOptions = [
   "Circa 10 quintali",
