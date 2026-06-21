@@ -49,7 +49,7 @@ const HeroSection = () => (
         Angurie, meloni e zucche all’ingrosso e al dettaglio · legna da ardere con consegna nel ferrarese e basso ravennate — dal 1975
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link className={`${heroButtonClass} bg-secondary text-secondary-foreground hover:bg-secondary/90`} to="/prodotti">
+        <Link className={`${heroButtonClass} bg-secondary text-secondary-foreground hover:bg-secondary/90`} to="/prodotti/">
           Scopri i Prodotti
         </Link>
         <a className={`${heroButtonClass} bg-primary-foreground text-primary hover:bg-primary-foreground/90`} href="tel:+390532814411">

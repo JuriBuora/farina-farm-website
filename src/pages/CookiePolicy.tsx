@@ -71,7 +71,8 @@ const CookiePolicy = () => {
       <PageSEO
         title="Cookie Policy"
         description="Informativa sull'uso dei cookie sul sito aziendaagricolafarina.com della Società Agricola Farina 2.0."
-        path="/cookie-policy"
+        path="/cookie-policy/"
+        robots="noindex, follow"
       />
       <Navbar />
 

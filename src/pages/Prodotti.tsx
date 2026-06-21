@@ -132,7 +132,7 @@ const Prodotti = () => {
     <PageSEO
       title="Angurie, Meloni e Zucche all’Ingrosso e al Dettaglio — Ferrara"
       description="Angurie, meloni e zucche coltivati nel ferrarese per vendita all’ingrosso e al dettaglio direttamente in azienda, tra Argenta, Portomaggiore e Ferrara."
-      path="/prodotti"
+      path="/prodotti/"
     />
     <Navbar />
     <main className="pt-16">
@@ -251,7 +251,7 @@ const Prodotti = () => {
                 <a href="tel:+390532814411"><Phone className="w-4 h-4 mr-2" /> Chiama Ora</a>
               </Button>
               <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-sans text-base px-8" asChild>
-                <Link to="/contatti">Contattaci</Link>
+                <Link to="/contatti/">Contattaci</Link>
               </Button>
             </div>
           </ScrollReveal>

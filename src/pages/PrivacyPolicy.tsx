@@ -16,7 +16,8 @@ const PrivacyPolicy = () => {
       <PageSEO
         title="Privacy Policy"
         description="Informativa sul trattamento dei dati personali della Società Agricola Farina 2.0 ai sensi del Regolamento UE 2016/679 (GDPR)."
-        path="/privacy-policy"
+        path="/privacy-policy/"
+        robots="noindex, follow"
       />
       <Navbar />
 

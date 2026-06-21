@@ -55,7 +55,7 @@ const CookieConsentBanner = () => {
             <p className="mt-1 max-w-3xl text-sm leading-relaxed text-muted-foreground">
               Usiamo Google Analytics solo con il tuo consenso per capire quali pagine vengono visitate e migliorare
               il sito. Puoi rifiutare e continuare a navigare normalmente. Dettagli nella{" "}
-              <Link to="/cookie-policy" className="text-primary hover:underline">
+              <Link to="/cookie-policy/" className="text-primary hover:underline">
                 Cookie Policy
               </Link>
               .

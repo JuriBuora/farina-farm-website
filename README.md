@@ -177,14 +177,14 @@ farina-farm-website/
 | Route | Page |
 |---|---|
 | `/` | Homepage |
-| `/prodotti` | Products |
-| `/contatti` | Contact |
-| `/galleria` | Gallery |
-| `/chi-siamo` | About |
-| `/legna` | Firewood information |
-| `/ordina-legna-da-ardere` | Firewood order page |
-| `/privacy-policy` | Privacy policy |
-| `/cookie-policy` | Cookie policy |
+| `/prodotti/` | Products |
+| `/contatti/` | Contact |
+| `/galleria/` | Gallery |
+| `/chi-siamo/` | About |
+| `/legna/` | Firewood information |
+| `/ordina-legna-da-ardere/` | Firewood order page |
+| `/privacy-policy/` | Privacy policy |
+| `/cookie-policy/` | Cookie policy |
 | `*` | Not found page |
 
 ---
@@ -224,6 +224,7 @@ Vite will start the local development server and print the local URL in the term
 |---|---|
 | `npm run dev` | Starts the Vite development server |
 | `npm run build` | Creates the production build |
+| `npm run check:seo` | Verifies sitemap, canonical URLs, and robots directives |
 | `npm run build:dev` | Builds using Vite development mode |
 | `npm run preview` | Serves the production build locally |
 | `npm run lint` | Runs ESLint |

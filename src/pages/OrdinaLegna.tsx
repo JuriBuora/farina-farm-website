@@ -16,8 +16,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
 const formSubmitEndpoint = "https://formsubmit.co/ajax/soc.agr.farina@gmail.com";
-const pagePath = "/ordina-legna-da-ardere";
-const pageUrl = "https://www.aziendaagricolafarina.com/ordina-legna-da-ardere";
+const pagePath = "/ordina-legna-da-ardere/";
+const pageUrl = "https://www.aziendaagricolafarina.com/ordina-legna-da-ardere/";
 
 const quantityOptions = [
   "Circa 10 quintali",
@@ -424,7 +424,7 @@ const OrdinaLegna = () => {
                       />
                       <span>
                         Accetto il trattamento dei dati per essere ricontattato sulla richiesta e dichiaro di aver letto la{" "}
-                        <Link to="/privacy-policy" className="text-primary hover:underline">
+                        <Link to="/privacy-policy/" className="text-primary hover:underline">
                           Privacy Policy
                         </Link>
                         . *

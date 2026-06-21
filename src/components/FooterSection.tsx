@@ -90,10 +90,10 @@ const FooterSection = () => (
         </p>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
           <div className="flex flex-wrap gap-x-4 gap-y-1">
-            <Link to="/privacy-policy" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
-            <Link to="/cookie-policy" className="hover:text-primary-foreground transition-colors">Cookie Policy</Link>
-            <Link to="/chi-siamo" className="hover:text-primary-foreground transition-colors">Chi Siamo</Link>
-            <Link to="/contatti" className="hover:text-primary-foreground transition-colors">Contatti</Link>
+            <Link to="/privacy-policy/" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
+            <Link to="/cookie-policy/" className="hover:text-primary-foreground transition-colors">Cookie Policy</Link>
+            <Link to="/chi-siamo/" className="hover:text-primary-foreground transition-colors">Chi Siamo</Link>
+            <Link to="/contatti/" className="hover:text-primary-foreground transition-colors">Contatti</Link>
           </div>
           <p>© {new Date().getFullYear()} Società Agricola Farina 2.0 — Tutti i diritti riservati</p>
         </div>

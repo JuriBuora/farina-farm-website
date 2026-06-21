@@ -23,7 +23,7 @@ const AboutSection = () => (
             nel cuore del territorio ferrarese. Una storia di famiglia che unisce tradizione e innovazione.
           </p>
           <Link
-            to="/chi-siamo"
+            to="/chi-siamo/"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
           >
             Scopri di più

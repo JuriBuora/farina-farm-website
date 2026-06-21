@@ -71,7 +71,7 @@ const Legna = () => {
       <PageSEO
         title="Legna da Ardere a Ferrara — Consegna a Domicilio"
         description="Legna da ardere stagionata di faggio, cerro e carpino nei tagli stufa, stufone, camino, pizza corta e pizza lunga. Consegna entro 50 km da Bando."
-        path="/legna"
+        path="/legna/"
       />
       <Navbar />
 
@@ -87,7 +87,7 @@ const Legna = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" variant="secondary" className="font-sans" asChild>
-                <Link to="/ordina-legna-da-ardere">
+                <Link to="/ordina-legna-da-ardere/">
                   <Send className="w-4 h-4 mr-2" />
                   Richiedi Consegna
                 </Link>
@@ -190,13 +190,13 @@ const Legna = () => {
                 </div>
                 <div className="flex flex-wrap gap-3 mt-6">
                   <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans" asChild>
-                    <Link to="/ordina-legna-da-ardere">
+                    <Link to="/ordina-legna-da-ardere/">
                       <Send className="w-4 h-4 mr-2" />
                       Richiedi consegna
                     </Link>
                   </Button>
                   <Button variant="outline" className="font-sans" asChild>
-                    <Link to="/contatti">Contattaci</Link>
+                    <Link to="/contatti/">Contattaci</Link>
                   </Button>
                 </div>
               </div>

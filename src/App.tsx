@@ -30,14 +30,14 @@ const App = () => (
     >
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/prodotti" element={<Prodotti />} />
-        <Route path="/contatti" element={<Contatti />} />
-        <Route path="/galleria" element={<Galleria />} />
-        <Route path="/chi-siamo" element={<ChiSiamo />} />
-        <Route path="/legna" element={<Legna />} />
-        <Route path="/ordina-legna-da-ardere" element={<OrdinaLegna />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/prodotti/" element={<Prodotti />} />
+        <Route path="/contatti/" element={<Contatti />} />
+        <Route path="/galleria/" element={<Galleria />} />
+        <Route path="/chi-siamo/" element={<ChiSiamo />} />
+        <Route path="/legna/" element={<Legna />} />
+        <Route path="/ordina-legna-da-ardere/" element={<OrdinaLegna />} />
+        <Route path="/privacy-policy/" element={<PrivacyPolicy />} />
+        <Route path="/cookie-policy/" element={<CookiePolicy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>

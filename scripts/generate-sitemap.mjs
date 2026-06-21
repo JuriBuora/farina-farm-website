@@ -15,7 +15,7 @@ function getSiteUrl() {
 
 function renderSitemapXml() {
   const siteUrl = getSiteUrl();
-  const urls = sitePages.map((page) => {
+  const urls = sitePages.filter((page) => page.includeInSitemap !== false).map((page) => {
     const loc = page.routePath === "/" ? `${siteUrl}/` : `${siteUrl}${page.routePath}`;
     return `  <url>
     <loc>${loc}</loc>

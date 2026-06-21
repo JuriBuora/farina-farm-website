@@ -21,3 +21,21 @@ export function toAbsoluteUrl(path: string): string {
     return `${base}${normalizedPath}`;
   }
 }
+
+export function toCanonicalPageUrl(path: string): string {
+  const absoluteUrl = toAbsoluteUrl(path);
+
+  try {
+    const url = new URL(absoluteUrl);
+    const isRoot = url.pathname === "/";
+    const hasFileExtension = /\/[^/]+\.[^/]+$/.test(url.pathname);
+
+    if (!isRoot && !hasFileExtension && !url.pathname.endsWith("/")) {
+      url.pathname = `${url.pathname}/`;
+    }
+
+    return url.toString();
+  } catch {
+    return absoluteUrl;
+  }
+}

@@ -17,7 +17,7 @@ import {
 } from "@/lib/contactValidation";
 
 const formSubmitEndpoint = "https://formsubmit.co/ajax/soc.agr.farina@gmail.com";
-const formSourceUrl = "https://www.aziendaagricolafarina.com/contatti";
+const formSourceUrl = "https://www.aziendaagricolafarina.com/contatti/";
 const minSubmitDelayMs = 3000;
 const submitCooldownMs = 15000;
 const formSubmitBlacklist = [
@@ -152,7 +152,7 @@ const Contatti = () => {
       <PageSEO
         title="Contatti — Azienda Agricola Farina (Ferrara)"
         description="Telefono, WhatsApp, email e indirizzo della Società Agricola Farina 2.0 a Bando di Argenta (FE). Contatti per prodotti, forniture e legna."
-        path="/contatti"
+        path="/contatti/"
       />
       <Navbar />
 
@@ -264,7 +264,7 @@ const Contatti = () => {
                   </p>
                   <p className="text-xs leading-relaxed text-muted-foreground">
                     Inviando il modulo autorizzi l&apos;inoltro della richiesta tramite un servizio esterno di recapito email
-                    e dichiari di aver letto la <Link to="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link>.
+                    e dichiari di aver letto la <Link to="/privacy-policy/" className="text-primary hover:underline">Privacy Policy</Link>.
                   </p>
                 </form>
               </div>

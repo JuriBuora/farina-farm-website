@@ -4,11 +4,11 @@ import logoFallback from "@/assets/logo-farina.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Chi Siamo", href: "/chi-siamo" },
-  { label: "Prodotti", href: "/prodotti" },
-  { label: "Galleria", href: "/galleria" },
-  { label: "Legna", href: "/legna" },
-  { label: "Contatti", href: "/contatti" },
+  { label: "Chi Siamo", href: "/chi-siamo/" },
+  { label: "Prodotti", href: "/prodotti/" },
+  { label: "Galleria", href: "/galleria/" },
+  { label: "Legna", href: "/legna/" },
+  { label: "Contatti", href: "/contatti/" },
 ];
 
 const PhoneIcon = ({ className }: { className?: string }) => (

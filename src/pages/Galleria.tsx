@@ -115,7 +115,7 @@ const Galleria = () => {
       <PageSEO
         title="Galleria — Le Nostre Coltivazioni nel Ferrarese"
         description="Galleria fotografica originale della Società Agricola Farina 2.0: campi, raccolto e prodotti tra Argenta e Portomaggiore (FE)."
-        path="/galleria"
+        path="/galleria/"
       />
       <Navbar />
 

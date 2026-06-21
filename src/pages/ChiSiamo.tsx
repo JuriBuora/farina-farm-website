@@ -29,7 +29,7 @@ const ChiSiamo = () => {
     <PageSEO
       title="Chi Siamo — Azienda Agricola Farina dal 1975"
       description="La storia della famiglia Farina: agricoltura nelle terre tra Argenta e Portomaggiore (Ferrara) da metà anni Settanta. Tradizione, innovazione e filiera corta."
-      path="/chi-siamo"
+      path="/chi-siamo/"
     />
     <Navbar />
     <main className="pt-16">
@@ -152,7 +152,7 @@ const ChiSiamo = () => {
                 con gli occhi di chi, da generazioni, conosce ogni zolla dei propri campi.
               </p>
               <Link
-                to="/contatti"
+                to="/contatti/"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
               >
                 Contattaci

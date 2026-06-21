@@ -1,17 +1,18 @@
 import { Helmet } from "react-helmet-async";
-import { SITE_NAME, toAbsoluteUrl } from "@/lib/site";
+import { SITE_NAME, toAbsoluteUrl, toCanonicalPageUrl } from "@/lib/site";
 
 interface PageSEOProps {
   title: string;
   description: string;
   path: string;
   type?: string;
+  robots?: string;
   jsonLd?: Record<string, unknown>;
 }
 
-const PageSEO = ({ title, description, path, type = "website", jsonLd }: PageSEOProps) => {
+const PageSEO = ({ title, description, path, type = "website", robots = "index, follow", jsonLd }: PageSEOProps) => {
   const fullTitle = `${title} | ${SITE_NAME}`;
-  const url = toAbsoluteUrl(path);
+  const url = toCanonicalPageUrl(path);
   const ogImage = toAbsoluteUrl("/og-image.jpg");
 
   return (
@@ -19,7 +20,7 @@ const PageSEO = ({ title, description, path, type = "website", jsonLd }: PageSEO
       <title>{fullTitle}</title>
       <meta name="author" content={SITE_NAME} />
       <meta name="description" content={description} />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content={robots} />
       <link rel="canonical" href={url} />
 
       <meta property="og:title" content={fullTitle} />
