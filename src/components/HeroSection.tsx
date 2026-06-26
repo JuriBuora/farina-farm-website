@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Flame, Phone } from "lucide-react";
 import heroFallback from "@/assets/hero-azienda-aerea.jpg";
 import heroAvif480 from "@/assets/generated/hero-azienda-aerea-480.avif";
 import heroAvif800 from "@/assets/generated/hero-azienda-aerea-800.avif";
@@ -13,12 +14,6 @@ const heroAvifSrcSet = `${heroAvif480} 480w, ${heroAvif800} 800w, ${heroAvif1200
 const heroWebpSrcSet = `${heroWebp480} 480w, ${heroWebp800} 800w, ${heroWebp1200} 1200w, ${heroWebp1600} 1600w`;
 const heroButtonClass =
   "inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-md px-8 text-base font-medium font-sans ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
-
-const PhoneIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
-  </svg>
-);
 
 const HeroSection = () => (
   <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -46,14 +41,17 @@ const HeroSection = () => (
         Azienda Agricola Farina
       </h1>
       <p className="text-primary-foreground/90 text-lg md:text-xl font-light mb-8">
-        Angurie, meloni e zucche all’ingrosso e al dettaglio · legna da ardere con consegna nel ferrarese e basso ravennate — dal 1975
+        Produzione e vendita di angurie, meloni e zucche all’ingrosso e al dettaglio · legna da ardere nel ferrarese e basso ravennate
       </p>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center">
         <Link className={`${heroButtonClass} bg-secondary text-secondary-foreground hover:bg-secondary/90`} to="/prodotti/">
           Scopri i Prodotti
         </Link>
+        <Link className={`${heroButtonClass} bg-primary-foreground text-primary hover:bg-primary-foreground/90`} to="/ordina-legna-da-ardere/">
+          <Flame className="w-4 h-4" /> Ordina Legna
+        </Link>
         <a className={`${heroButtonClass} bg-primary-foreground text-primary hover:bg-primary-foreground/90`} href="tel:+390532814411">
-          <PhoneIcon className="w-4 h-4 mr-2" /> Chiama Ora
+          <Phone className="w-4 h-4" /> Chiama Ora
         </a>
       </div>
     </div>

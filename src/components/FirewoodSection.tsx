@@ -1,5 +1,6 @@
 import SiteImage from "@/components/SiteImage";
-import { Truck, Flame, Package } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Truck, Flame, Package, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "./ScrollReveal";
 
@@ -50,9 +51,18 @@ const FirewoodSection = () => (
                 </div>
               ))}
             </div>
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans" asChild>
-              <a href="tel:+393381571439">Ordina Ora</a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans" asChild>
+                <Link to="/ordina-legna-da-ardere/">
+                  <Flame className="w-4 h-4" /> Ordina Legna
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="font-sans" asChild>
+                <a href="tel:+393381571439">
+                  <Phone className="w-4 h-4" /> Chiama Ora
+                </a>
+              </Button>
+            </div>
           </div>
         </ScrollReveal>
       </div>

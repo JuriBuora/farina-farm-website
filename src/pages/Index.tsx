@@ -7,7 +7,7 @@ const Index = () => (
   <>
     <PageSEO
       title="Azienda Agricola a Bando di Argenta (FE)"
-      description="Società Agricola Farina 2.0 a Bando di Argenta (FE): angurie, meloni e zucche all’ingrosso e al dettaglio, e legna da ardere nel ferrarese e basso ravennate."
+      description="Società Agricola Farina 2.0 produce e vende angurie, meloni e zucche a Bando di Argenta (FE), all’ingrosso e al dettaglio, e fornisce legna da ardere."
       path="/"
     />
     <Navbar />

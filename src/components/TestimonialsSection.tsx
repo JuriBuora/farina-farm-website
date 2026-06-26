@@ -46,7 +46,7 @@ const TestimonialsSection = () => (
             Dicono di noi
           </h2>
           <p className="text-muted-foreground text-lg">
-            Valutazione <strong className="text-foreground">4,8</strong> su Google con oltre 20 recensioni
+            Valutazione <strong className="text-foreground">4,8</strong> su Google con oltre 40 recensioni
           </p>
         </div>
       </ScrollReveal>
@@ -71,9 +71,9 @@ const TestimonialsSection = () => (
               <div>
                 <p className="text-foreground text-sm font-sans font-semibold">{t.name}</p>
                 {t.role && (
-                  <p className="text-muted-foreground/60 text-xs font-sans mt-0.5">{t.role}</p>
+                  <p className="text-muted-foreground text-xs font-sans mt-0.5">{t.role}</p>
                 )}
-                <p className="text-muted-foreground/50 text-xs font-sans mt-1 group-hover:text-primary transition-colors">
+                <p className="text-muted-foreground text-xs font-sans mt-1 group-hover:text-primary transition-colors">
                   Google Reviews ↗
                 </p>
               </div>
