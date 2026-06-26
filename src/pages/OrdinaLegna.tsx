@@ -14,8 +14,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import {
+  FORM_SUBMIT_BLACKLIST,
+  FORM_SUBMIT_ENDPOINT,
+  MIN_SUBMIT_DELAY_MS,
+  SUBMIT_COOLDOWN_MS,
+  getFormSubmitErrorMessage,
+  getHoneypotValue,
+  hasBlacklistedContent,
+} from "@/lib/formSpamProtection";
 
-const formSubmitEndpoint = "https://formsubmit.co/ajax/soc.agr.farina@gmail.com";
 const pagePath = "/ordina-legna-da-ardere/";
 const pageUrl = "https://www.aziendaagricolafarina.com/ordina-legna-da-ardere/";
 
@@ -118,6 +126,8 @@ function getErrorMessage(error?: { message?: string }) {
 const OrdinaLegna = () => {
   const { toast } = useToast();
   const minDate = React.useMemo(() => new Date().toISOString().split("T")[0], []);
+  const formLoadedAtRef = React.useRef(Date.now());
+  const lastSubmitAtRef = React.useRef<number | null>(null);
   const {
     register,
     handleSubmit,
@@ -132,7 +142,7 @@ const OrdinaLegna = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const onSubmit = async (values: OrderRequestValues) => {
+  const onSubmit = async (values: OrderRequestValues, fillDurationMs: number) => {
     const formData = new FormData();
 
     formData.set("nome", values.name);
@@ -150,8 +160,10 @@ const OrdinaLegna = () => {
     formData.set("_subject", `Richiesta legna da ardere - ${values.name}`);
     formData.set("_template", "table");
     formData.set("_url", pageUrl);
+    formData.set("_blacklist", FORM_SUBMIT_BLACKLIST);
+    formData.set("tempo_compilazione_secondi", String(Math.max(1, Math.round(fillDurationMs / 1000))));
 
-    const response = await fetch(formSubmitEndpoint, {
+    const response = await fetch(FORM_SUBMIT_ENDPOINT, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -172,15 +184,64 @@ const OrdinaLegna = () => {
       title: "Richiesta inviata",
       description: "Ti contatteremo per confermare disponibilità, prezzo finale, consegna e pagamento.",
     });
+    lastSubmitAtRef.current = Date.now();
+    formLoadedAtRef.current = Date.now();
     reset(defaultValues);
   };
 
-  const handleFormSubmit = handleSubmit(async (values) => {
+  const handleFormSubmit = handleSubmit(async (values, event) => {
+    const now = Date.now();
+    const fillDurationMs = now - formLoadedAtRef.current;
+    const formElement = event?.currentTarget instanceof HTMLFormElement ? event.currentTarget : null;
+
+    if (getHoneypotValue(formElement)) {
+      toast({
+        title: "Invio non riuscito",
+        description: "Riprova tra poco oppure contattaci telefonicamente o via WhatsApp.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (fillDurationMs < MIN_SUBMIT_DELAY_MS) {
+      toast({
+        title: "Invio troppo rapido",
+        description: "Attendi qualche secondo e riprova.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (lastSubmitAtRef.current && now - lastSubmitAtRef.current < SUBMIT_COOLDOWN_MS) {
+      toast({
+        title: "Attendi prima di inviare di nuovo",
+        description: "Il modulo limita gli invii ravvicinati per ridurre spam e duplicati.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (hasBlacklistedContent([
+      values.name,
+      values.email,
+      values.phone,
+      values.deliveryAddress,
+      values.comune,
+      values.deliveryNotes,
+    ])) {
+      toast({
+        title: "Contenuto non valido",
+        description: "La richiesta contiene testo non accettato dal filtro antispam.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     try {
-      await onSubmit(values);
+      await onSubmit(values, fillDurationMs);
     } catch (error) {
-      const message = error instanceof Error && error.message.toLowerCase().includes("activation")
-        ? "Il servizio di invio deve essere attivato dall'email aziendale prima di ricevere richieste."
+      const message = error instanceof Error
+        ? getFormSubmitErrorMessage(error.message)
         : "Riprova tra poco oppure contattaci telefonicamente o via WhatsApp.";
 
       toast({
@@ -284,6 +345,7 @@ const OrdinaLegna = () => {
                 </div>
 
                 <form onSubmit={handleFormSubmit} noValidate className="space-y-5">
+                  <input type="hidden" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
                   <div className="grid md:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">

@@ -15,40 +15,15 @@ import {
   normalizeContactForm,
   validateContactForm,
 } from "@/lib/contactValidation";
+import {
+  FORM_SUBMIT_BLACKLIST,
+  FORM_SUBMIT_ENDPOINT,
+  MIN_SUBMIT_DELAY_MS,
+  SUBMIT_COOLDOWN_MS,
+  getFormSubmitErrorMessage,
+} from "@/lib/formSpamProtection";
 
-const formSubmitEndpoint = "https://formsubmit.co/ajax/soc.agr.farina@gmail.com";
 const formSourceUrl = "https://www.aziendaagricolafarina.com/contatti/";
-const minSubmitDelayMs = 3000;
-const submitCooldownMs = 15000;
-const formSubmitBlacklist = [
-  "<a href=",
-  "[url=",
-  "bit.ly/",
-  "tinyurl.com/",
-  "t.me/",
-  "viagra",
-  "casino",
-  "cbd gummies",
-  "crypto giveaway",
-  "guest post",
-  "backlinks",
-  "seo service",
-  "payday loan",
-].join(", ");
-
-function getFormSubmitErrorMessage(message?: string) {
-  const normalizedMessage = message?.toLowerCase() ?? "";
-
-  if (normalizedMessage.includes("activation")) {
-    return "Il servizio di invio non è ancora attivo: apri l'email di attivazione inviata da FormSubmit a soc.agr.farina@gmail.com, poi riprova.";
-  }
-
-  if (normalizedMessage.includes("web server")) {
-    return "Il modulo funziona solo dal sito pubblicato. Se stai testando una copia locale, avvia il server di sviluppo.";
-  }
-
-  return "Riprova tra poco oppure contattaci telefonicamente.";
-}
 
 const Contatti = () => {
   const { toast } = useToast();
@@ -74,7 +49,7 @@ const Contatti = () => {
     const now = Date.now();
     const fillDurationMs = now - formLoadedAtRef.current;
 
-    if (fillDurationMs < minSubmitDelayMs) {
+    if (fillDurationMs < MIN_SUBMIT_DELAY_MS) {
       toast({
         title: "Invio troppo rapido",
         description: "Attendi qualche secondo e riprova.",
@@ -83,7 +58,7 @@ const Contatti = () => {
       return;
     }
 
-    if (lastSubmitAtRef.current && now - lastSubmitAtRef.current < submitCooldownMs) {
+    if (lastSubmitAtRef.current && now - lastSubmitAtRef.current < SUBMIT_COOLDOWN_MS) {
       toast({
         title: "Attendi prima di inviare di nuovo",
         description: "Il modulo limita gli invii ravvicinati per ridurre spam e duplicati.",
@@ -107,7 +82,7 @@ const Contatti = () => {
       formData.set("_url", formSourceUrl);
       formData.set("tempo_compilazione_secondi", String(Math.max(1, Math.round(fillDurationMs / 1000))));
 
-      const response = await fetch(formSubmitEndpoint, {
+      const response = await fetch(FORM_SUBMIT_ENDPOINT, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -238,7 +213,7 @@ const Contatti = () => {
                   <input type="hidden" name="_template" value="table" />
                   <input type="hidden" name="_url" value={formSourceUrl} />
                   <input type="hidden" name="_subject" value="Nuovo messaggio da aziendaagricolafarina.com" />
-                  <input type="hidden" name="_blacklist" value={formSubmitBlacklist} />
+                  <input type="hidden" name="_blacklist" value={FORM_SUBMIT_BLACKLIST} />
                   <div>
                     <label htmlFor="nome" className="block text-sm font-medium text-foreground mb-1.5">Nome e Cognome *</label>
                     <Input id="nome" name="nome" value={form.nome} onChange={handleChange} placeholder="Mario Rossi" maxLength={100} minLength={2} autoComplete="name" required />
