@@ -1,0 +1,4 @@
+Contact: mailto:soc.agr.farina@gmail.com
+Expires: 2027-06-27T00:00:00.000Z
+Preferred-Languages: it, en
+Canonical: https://www.aziendaagricolafarina.com/.well-known/security.txt

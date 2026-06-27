@@ -341,6 +341,7 @@ const OrdinaLegna = () => {
                   <h2 className="font-serif text-2xl font-semibold text-foreground">Richiedi consegna legna</h2>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     Nessun pagamento ora. Ti contatteremo prima che la richiesta diventi ordine confermato.
+                    Rispondiamo normalmente entro 24-48 ore lavorative.
                   </p>
                 </div>
 
@@ -351,14 +352,14 @@ const OrdinaLegna = () => {
                       <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
                         Nome e cognome *
                       </label>
-                      <Input id="name" autoComplete="name" {...register("name")} />
+                      <Input id="name" autoComplete="name" required {...register("name")} />
                       {getErrorMessage(errors.name)}
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1.5">
                         Telefono *
                       </label>
-                      <Input id="phone" type="tel" inputMode="tel" autoComplete="tel" {...register("phone")} />
+                      <Input id="phone" type="tel" inputMode="tel" autoComplete="tel" required {...register("phone")} />
                       {getErrorMessage(errors.phone)}
                     </div>
                   </div>
@@ -367,7 +368,7 @@ const OrdinaLegna = () => {
                     <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
                       Email *
                     </label>
-                    <Input id="email" type="email" inputMode="email" autoComplete="email" {...register("email")} />
+                    <Input id="email" type="email" inputMode="email" autoComplete="email" required {...register("email")} />
                     {getErrorMessage(errors.email)}
                   </div>
 
@@ -375,7 +376,7 @@ const OrdinaLegna = () => {
                     <label htmlFor="deliveryAddress" className="block text-sm font-medium text-foreground mb-1.5">
                       Indirizzo di consegna *
                     </label>
-                    <Input id="deliveryAddress" autoComplete="street-address" {...register("deliveryAddress")} />
+                    <Input id="deliveryAddress" autoComplete="street-address" required {...register("deliveryAddress")} />
                     {getErrorMessage(errors.deliveryAddress)}
                   </div>
 
@@ -384,14 +385,14 @@ const OrdinaLegna = () => {
                       <label htmlFor="comune" className="block text-sm font-medium text-foreground mb-1.5">
                         Comune *
                       </label>
-                      <Input id="comune" autoComplete="address-level2" {...register("comune")} />
+                      <Input id="comune" autoComplete="address-level2" required {...register("comune")} />
                       {getErrorMessage(errors.comune)}
                     </div>
                     <div>
                       <label htmlFor="cap" className="block text-sm font-medium text-foreground mb-1.5">
                         CAP *
                       </label>
-                      <Input id="cap" inputMode="numeric" autoComplete="postal-code" maxLength={5} {...register("cap")} />
+                      <Input id="cap" inputMode="numeric" autoComplete="postal-code" maxLength={5} required {...register("cap")} />
                       {getErrorMessage(errors.cap)}
                     </div>
                     <div>
@@ -400,6 +401,7 @@ const OrdinaLegna = () => {
                       </label>
                       <select
                         id="province"
+                        required
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 md:text-sm"
                         {...register("province")}
                       >
@@ -420,6 +422,7 @@ const OrdinaLegna = () => {
                       </label>
                       <select
                         id="requestedQuantity"
+                        required
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 md:text-sm"
                         {...register("requestedQuantity")}
                       >
@@ -438,6 +441,7 @@ const OrdinaLegna = () => {
                       </label>
                       <select
                         id="requestedCut"
+                        required
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 md:text-sm"
                         {...register("requestedCut")}
                       >
@@ -458,6 +462,7 @@ const OrdinaLegna = () => {
                         id="preferredDeliveryDate"
                         type="date"
                         min={minDate}
+                        required
                         {...register("preferredDeliveryDate")}
                       />
                       {getErrorMessage(errors.preferredDeliveryDate)}
@@ -481,6 +486,7 @@ const OrdinaLegna = () => {
                     <label className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
                       <input
                         type="checkbox"
+                        required
                         className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary"
                         {...register("privacyAccepted")}
                       />
