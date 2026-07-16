@@ -128,6 +128,18 @@ The workflow:
 5. Uploads the `dist` folder to GitHub Pages
 6. Publishes the website
 
+### Stable QR landing address
+
+Printed QR materials use the permanent public address:
+
+```txt
+https://www.aziendaagricolafarina.com/qr
+```
+
+The site is hosted as a static GitHub Pages artifact, which cannot emit a configurable HTTP 302/307 from this repository. The static fallback at `/qr` and `/qr/` therefore loads `public/qr/redirect.js`, which immediately replaces the browser location with the fixed UTM-tagged homepage destination. It intentionally ignores all incoming query parameters, so it cannot be used as an open redirect.
+
+To change the campaign destination in the future, edit the single `QR_DESTINATION` value in `scripts/qr-redirect.mjs`, test it, and deploy normally. The deployment build regenerates the static landing files. Do not change the printed `/qr` address.
+
 ---
 
 ## Project Structure
