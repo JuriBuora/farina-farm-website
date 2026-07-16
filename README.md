@@ -140,6 +140,8 @@ The site is hosted as a static GitHub Pages artifact, which cannot emit a config
 
 To change the campaign destination in the future, edit the single `QR_DESTINATION` value in `scripts/qr-redirect.mjs`, test it, and deploy normally. The deployment build regenerates the static landing files. Do not change the printed `/qr` address.
 
+Print-ready PNG and SVG files are stored in `public/qr-assets/`. To recreate and decode-verify them, install `qrcode[pil]`, `cairosvg`, and `zxing-cpp`, then run `python3 scripts/generate-qr-assets.py`.
+
 ---
 
 ## Project Structure
